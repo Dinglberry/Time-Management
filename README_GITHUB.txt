@@ -1,24 +1,20 @@
-Upload all files in this folder to a public GitHub repository, then turn on GitHub Pages.
+Upload these files directly into the top level of your GitHub repository:
+- index.html
+- app.js
+- styles.css
+- manifest.json
+- service-worker.js
+- icon-192.png
+- icon-512.png
 
-Recommended repo name:
-glow-up-app
+Do not upload the parent folder itself if you want GitHub Pages to find index.html at the repo root.
 
-GitHub Pages steps:
-1. Create a new public repo.
-2. Upload every file from this folder.
-3. Go to Settings > Pages.
-4. Source: Deploy from branch.
-5. Branch: main / root.
-6. Wait a minute for the site link.
+After upload:
+1. Go to Settings > Pages
+2. Set Build and deployment to Deploy from branch
+3. Choose main and /(root)
+4. Leave Custom domain blank
+5. Open your site link in Safari and Add to Home Screen
 
-Your link will look like:
-https://YOUR-USERNAME.github.io/glow-up-app/
-
-For iPhone:
-- Open the GitHub Pages link in Safari.
-- Tap Share.
-- Tap Add to Home Screen.
-- Open the app from your home screen.
-
-Reminders note:
-This version uses browser notifications. Allow notifications when prompted.
+Reminder note:
+This app can show browser notifications when allowed by iPhone/Safari and while the app is open, resumed, or recently active. It is not a fully native background push app.

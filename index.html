@@ -35,11 +35,16 @@
           </div>
         </div>
 
-        <div class="mini-grid">
+        <div class="mini-grid three-up">
           <article class="card mini-stat">
             <p class="eyebrow">Streak</p>
             <h3><span id="streakCount">0</span> days</h3>
             <p class="muted">Checked in daily</p>
+          </article>
+          <article class="card mini-stat">
+            <p class="eyebrow">Habit score</p>
+            <h3 id="habitScore">0%</h3>
+            <p class="muted">Today + weekly momentum</p>
           </article>
           <article class="card mini-stat">
             <p class="eyebrow">Reminders</p>
@@ -71,6 +76,24 @@
       </section>
 
       <section id="tab-plan" class="tab-panel">
+        <article class="card section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Trainee mode</p>
+              <h3>Auto-build around work shifts</h3>
+            </div>
+            <div class="actions-row wrap-right">
+              <select id="traineePreset">
+                <option value="balanced">Balanced trainee day</option>
+                <option value="intense">Intense trainee day</option>
+                <option value="recovery">Recovery-first day</option>
+              </select>
+              <button id="buildTraineeModeButton" class="primary-btn secondary">Build trainee mode</button>
+            </div>
+          </div>
+          <p class="muted small">This adds gym, reset, shower, meal, and wind-down blocks around your current work shifts without deleting the shifts you already entered.</p>
+        </article>
+
         <article class="card section-card">
           <div class="section-head">
             <div>
@@ -134,6 +157,16 @@
           </div>
           <div id="householdBlocks" class="stack"></div>
         </article>
+
+        <article class="card section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Glow-up library</p>
+              <h3>Hair, teeth, skin, style</h3>
+            </div>
+          </div>
+          <div id="beautyGuides" class="stack"></div>
+        </article>
       </section>
 
       <section id="tab-settings" class="tab-panel">
@@ -149,7 +182,7 @@
             <label class="switch-row">
               <div>
                 <strong>Event reminders</strong>
-                <p class="muted">Get alerted before upcoming blocks while the app is open.</p>
+                <p class="muted">The app checks regularly and alerts before upcoming blocks when your iPhone allows browser notifications.</p>
               </div>
               <input id="eventReminderToggle" type="checkbox" />
             </label>
@@ -171,7 +204,7 @@
               <input id="nightReminderTime" type="time" value="21:15" />
             </label>
             <button id="saveReminderSettingsButton" class="primary-btn secondary">Save reminder settings</button>
-            <p class="muted small">For GitHub Pages and iPhone home-screen use, browser notifications are the most reliable option available without building a native App Store app.</p>
+            <p class="muted small">This version is optimized for GitHub Pages and iPhone home-screen use. It cannot send true native push alerts while fully closed, but it is set up to check aggressively whenever the app is open, resumed, or recently active.</p>
           </div>
         </article>
       </section>
@@ -198,6 +231,8 @@
       </div>
     </form>
   </dialog>
+  <button id="logWashDay" class="primary-btn">I washed my hair today</button>
+<p id="hairStatusText"></p>
 
   <script src="app.js"></script>
 </body>
